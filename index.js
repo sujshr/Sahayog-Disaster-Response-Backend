@@ -3,6 +3,7 @@ import cors from "cors";
 import http from "http";
 import { connectDB } from "./src/config/db.js";
 import emergencyRoute from "./src/routes/emergency.js";
+import globalNewsRoute from "./src/routes/globalnews.js"
 
 
 const app = express();
@@ -24,3 +25,4 @@ server.listen(PORT, async () => {
 
 app.use(express.json());
 app.use("/emergency",emergencyRoute);
+app.use("/globalnews", globalNewsRoute);

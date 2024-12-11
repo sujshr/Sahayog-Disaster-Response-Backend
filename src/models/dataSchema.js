@@ -51,4 +51,11 @@ const EmergencyContactSchema = z.object({
   districts: z.array(DistrictSchema),
 });
 
-export { EmergencyContactSchema, HospitalSchema, DistrictSchema };
+const GlobalNewsSchema = z.object({
+  title: z.string().nonempty("Title is required"),
+  link: z.string().url("Link must be a valid URL"),
+  pubDate: z.date(),
+});
+
+
+export { EmergencyContactSchema, HospitalSchema, DistrictSchema, GlobalNewsSchema };
